@@ -15,7 +15,7 @@ function App() {
   const [sensorError, setSensorError] = useState<any>()
   const [sensorQ, setSensorQ] = useState<Quaternion>(new Quaternion())
 
-  const onClickPromptPermissions = useCallback(() => {
+  const onClickStartSensor = useCallback(() => {
     const options: MotionSensorOptions = {
       frequency: 1,
       referenceFrame: "device",
@@ -85,14 +85,12 @@ function App() {
           backgroundColor: sensorError ? 'darkred' : 'green', 
         }}>
           <Typography variant={'h1'}>Demo: Tilt virtual using physical sensors</Typography>
-          <Typography variant={'body'}>Serve this code locally with "npm start".</Typography>
-          <Typography variant={'body'}>Then, on an Android phone, open the URL on your local network, and finally:</Typography>
-          <Typography variant={'h2'}>Approve Permissions</Typography>
-          <Typography variant={'body'}>To Enter 3D</Typography>
+          <Typography variant={'body'}>Then, on an Android phone, open the URL on your local network. To Enter 3D,</Typography>
+          <Typography variant={'h2'}>Start Motion Sensor Tracking</Typography>
           <Button
             disabled={show3d}
-            onClick={onClickPromptPermissions}
-          >APPROVE</Button>
+            onClick={onClickStartSensor}
+          >START</Button>
           {sensorError && (
             <Typography variant='body'>{sensorError.name}</Typography>
           )}
