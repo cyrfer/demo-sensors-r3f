@@ -1,0 +1,8 @@
+html, body, #root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  height: 100vh;
+}
